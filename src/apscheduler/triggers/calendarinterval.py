@@ -86,9 +86,7 @@ class CalendarIntervalTrigger(Trigger):
         for field in ("years", "months", "weeks", "days", "hour", "minute", "second"):
             value = getattr(self, field)
             if isinstance(value, bool):
-                raise TypeError(
-                    f"{field} must be an int, not bool (got {value!r})"
-                )
+                raise TypeError(f"{field} must be an int, not bool (got {value!r})")
 
         self._time = time(self.hour, self.minute, self.second, tzinfo=self.timezone)
 

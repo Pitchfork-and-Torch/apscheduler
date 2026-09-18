@@ -79,4 +79,3 @@ def test_as_timedelta_rejects_bool():
         as_timedelta(True)
     with pytest.raises(TypeError, match="bool"):
         as_timedelta(False)
-

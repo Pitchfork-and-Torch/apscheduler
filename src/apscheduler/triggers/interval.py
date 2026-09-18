@@ -59,9 +59,7 @@ class IntervalTrigger(Trigger):
         for field in ("weeks", "days", "hours", "minutes", "seconds", "microseconds"):
             value = getattr(self, field)
             if isinstance(value, bool):
-                raise TypeError(
-                    f"{field} must be a number, not bool (got {value!r})"
-                )
+                raise TypeError(f"{field} must be a number, not bool (got {value!r})")
 
         self._interval = timedelta(
             weeks=self.weeks,
